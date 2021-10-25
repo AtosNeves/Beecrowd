@@ -1,0 +1,70 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+    static int rafael(int x, int y) {
+
+        double rafa = Math.pow((3 * x), 2) + Math.pow(y, 2);
+        return (int) rafa;
+    }
+
+    static int beto(int x, int y) {
+        double betoo = 2 * Math.pow(x, 2) + Math.pow((5 * y), 2);
+        return (int) betoo;
+    }
+
+    static int carlos(int x, int y) {
+
+        double carloss = -100 * x + Math.pow(y, 3);
+        return (int) carloss;
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        Scanner input = new Scanner(System.in);
+        int x1, y1;
+        int testes = input.nextInt();
+
+        while (testes > 0) {
+            x1 = input.nextInt();
+            y1 = input.nextInt();
+
+            long r1 = rafael(x1, y1);
+            long b1 = beto(x1, y1);
+            long c1 = carlos(x1, y1);
+
+            long maior = r1;
+            int v = 1;
+            if (maior < c1) {
+                maior = c1;
+                v = 3;
+            }
+
+            if (maior < b1) {
+                maior = b1;
+                v = 2;
+            } else if (maior < c1) {
+                maior = c1;
+                v = 3;
+            }
+
+            switch (v) {
+                case 1:
+                    System.out.println("Rafael ganhou");
+
+                    break;
+                case 2:
+                    System.out.println("Beto ganhou");
+                    break;
+                case 3:
+                    System.out.println("Carlos ganhou");
+                    break;
+                default:
+                    break;
+            }
+            testes = testes - 1;
+        }
+        input.close();
+    }
+}
+
