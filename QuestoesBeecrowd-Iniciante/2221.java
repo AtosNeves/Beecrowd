@@ -6,7 +6,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int q = input.nextInt();
         for (int i = 0; i < q; i++) {
-            
+
             Pokemon p1 = new Pokemon();
             int bonus = input.nextInt();
             p1.setBonus(bonus);
@@ -18,28 +18,17 @@ public class Main {
             p2.setAtk(input.nextInt());
             p2.setDef(input.nextInt());
             p2.setLi(input.nextInt());
-            
-            
-            double poder1 =  p1.calculaVG(p1.getAtk(), p1.getDef(), p1.getLi(),bonus);
+
+            double poder1 = p1.calculaVG(p1.getAtk(), p1.getDef(), p1.getLi(), bonus);
             p1.setPoder(poder1);
-            
-            double poder2 = p2.calculaVG(p2.getAtk(), p2.getDef(), p2.getLi(),bonus);
+
+            double poder2 = p2.calculaVG(p2.getAtk(), p2.getDef(), p2.getLi(), bonus);
             p2.setPoder(poder2);
-            if (p1.getPoder()>p2.getPoder()) {
-                System.out.println("Dabriel");
-            }
-            if (p1.getPoder() < p2.getPoder()) {
-                System.out.println("Guarte");
-            }
-            if (p1.getPoder() == p2.getPoder()) {
-                System.out.println("Empate");
-            }
-            
+            Batalha batalha1 = new Batalha();
+            batalha1.Vitoria(p1, p2);
         }
     }
 }
-
-
 
 class Pokemon {
 
@@ -50,7 +39,7 @@ class Pokemon {
     private int vg;
     private double poder;
 
-    public static double calculaVG(int a, int d, int l,int b) {
+    public static double calculaVG(int a, int d, int l, int b) {
         if (l % 2 == 0) {
 
             double vg = (a + d) / 2 + b;
@@ -65,7 +54,6 @@ class Pokemon {
         }
         return 0;
     }
-    
 
     /**
      * @return int return the atk
@@ -123,7 +111,6 @@ class Pokemon {
         this.bonus = bonus;
     }
 
-
     /**
      * @return int return the vg
      */
@@ -137,7 +124,6 @@ class Pokemon {
     public void setVg(int vg) {
         this.vg = vg;
     }
-
 
     /**
      * @return int return the poder
@@ -155,3 +141,20 @@ class Pokemon {
 
 }
 
+class Batalha {
+
+    public void Vitoria(Pokemon p1, Pokemon p2) {
+
+        if (p1.getPoder() > p2.getPoder()) {
+            System.out.println("Dabriel");
+        }
+        if (p1.getPoder() < p2.getPoder()) {
+            System.out.println("Guarte");
+        }
+        if (p1.getPoder() == p2.getPoder()) {
+            System.out.println("Empate");
+        }
+
+    }
+
+}
