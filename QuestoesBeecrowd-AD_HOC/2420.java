@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+class Main {
     static final double PI = 3.1415926535897;
 
     public static void main(String[] args) throws IOException {
@@ -13,7 +13,7 @@ public class Main {
             v[i] = input.nextInt();
             s = s + v[i];
         }
-        System.out.println(sec(v,s));
+        System.out.println(sec(v, s));
     }
 
     public static int sec(int[] v, int s) {
