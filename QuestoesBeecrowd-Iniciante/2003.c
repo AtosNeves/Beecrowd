@@ -7,6 +7,7 @@ int main()
 {
       setlocale(LC_ALL, "");
       int hora, minuto;
+      
       while (scanf("%d:%d", &hora, &minuto) != EOF)
       {
             // printf("%d %d\n", hora, minuto);
