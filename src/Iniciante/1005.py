@@ -1,0 +1,6 @@
+a = float(input())
+a1 = round(a,1)
+b = float(input())
+b1 = round(b,1)
+c = float((a1*3.5 + b1*7.5)/11)
+print("MEDIA = {:.5f}".format(c))
